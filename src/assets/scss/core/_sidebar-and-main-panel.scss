@@ -264,7 +264,7 @@
             line-height: 20px;
         }
 
-        .simple-text{
+        .main-text{
             text-transform: uppercase;
             padding: $padding-small-vertical $padding-zero;
             display: inline-block;
@@ -276,8 +276,10 @@
             overflow: hidden;
             text-align: center;
             display: block;
+            margin-left: 30px;
         }
     }
+
 
     .logo-tim{
         border-radius: 50%;
@@ -291,6 +293,8 @@
         img{
             width: 60px;
             height: 60px;
+            display: inline;
+            margin-right: 30px;
         }
     }
 
@@ -475,7 +479,10 @@
                     opacity: 1;
                     @include transform-translate-x(0px);
                 }
+
+
             }
+
 
             .sidebar-wrapper{
                 width: 260px;
