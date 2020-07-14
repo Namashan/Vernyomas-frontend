@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
       durations = 500;
 
       chart.on('draw', function(data) {
-        if(data.type === 'line' || data.type === 'area') {
+        if (data.type === 'line' || data.type === 'area') {
           data.element.animate({
             d: {
               begin: 600,
@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
               easing: Chartist.Svg.Easing.easeOutQuint
             }
           });
-        } else if(data.type === 'point') {
+        } else if (data.type === 'point') {
               seq++;
               data.element.animate({
                 opacity: {
@@ -49,7 +49,7 @@ export class DashboardComponent implements OnInit {
       delays2 = 80;
       durations2 = 500;
       chart.on('draw', function(data) {
-        if(data.type === 'bar'){
+        if (data.type === 'bar'){
             seq2++;
             data.element.animate({
               opacity: {
@@ -84,7 +84,7 @@ export class DashboardComponent implements OnInit {
           chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
       }
 
-      var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
+      let dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
 
       this.startAnimationForLineChart(dailySalesChart);
 
