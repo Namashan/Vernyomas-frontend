@@ -1011,6 +1011,9 @@ pre {
   margin-left: 91.66667%; }
 
 @media (min-width: 576px) {
+  .profile-pic{
+    margin-bottom: 40px;
+  }
   .col-sm {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -1170,6 +1173,7 @@ pre {
     margin-left: 91.66667%; } }
 
 @media (min-width: 768px) {
+
   .col-md {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
