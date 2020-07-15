@@ -1,5 +1,10 @@
 .picsum-img-wrapper{
     text-align: center;
     margin-top: 70px;
-    border-radius: 30%;
 }
+
+.rounded-img{
+    border-radius: 3%;
+}
+
+
