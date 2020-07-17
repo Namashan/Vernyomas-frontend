@@ -122,4 +122,8 @@ export class NavbarComponent implements OnInit {
       }
       return 'Dashboard';
     }
+
+    onCLick() {
+        this.router.navigate()
+    }
 }
