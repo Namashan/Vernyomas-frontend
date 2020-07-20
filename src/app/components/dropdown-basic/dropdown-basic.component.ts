@@ -6,14 +6,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class DropDownBasicComponent implements OnInit {
   selectedValue: string;
-  options: [string, string, string];
+  options: string [];
   constructor() {
     this.options = ['Nő', 'Férfi', 'Egyéb']
   }
   ngOnInit() {
   }
 
-  onCLick() {
-
+  onCLick(opt: string) {
+    this.selectedValue = opt;
   }
 }
