@@ -1,0 +1,34 @@
+<p>
+    <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+        Bővebben
+    </button>
+</p>
+<div id="tenyek1" [ngbCollapse]="isCollapsed">
+    <div class="card">
+        <div class="card-body">
+            A szervezet vérellátásának fenntartásában,
+            a vér keringetésében a perifériás erekben a szív vesz részt.
+            A szív pumpafunkciója segíti a vér áramlását az artériás rendszerben.
+            A tüdőereken keresztül pedig oxigénnel dúsított vérre cserélődik az „elhasználódott vér”.
+            A minden egyes szívösszehúzódás során továbbított vér mennyiségének (pulzustérfogat) és a percenkénti szívösszehúzódások számának (pulzus) szorzata adja meg a perctérfogatot,
+            vagyis az egy perc alatt a nagyvérkörbe áramló vér mennyiségét.
+            A nagyerekbe kerülő vér nyomást gyakorol az egyébként élettanilag rugalmas erek falára.
+            Ez adja a vérnyomást, mely mérhető.
+            A vérnyomás legmagasabb értéke a szívösszehúzódás alatt,
+            legalacsonyabb értéke a szív elernyedése alatt alakul ki.
+            Ez a két érték adja a mérhető vérnyomás felső (szisztolés érték),
+            illetve alsó (diasztolés érték) értékét.
+            A szisztolés nyomások értékét pedig alapvetően az erek falának rugalmassága
+            (pl. meszes ereknél csökken a rugalmasság),
+            illetve a percenkénti nagyerekbe pumpált vérmennyiség határozza meg.
+            A vérnyomás szabályozásában ezenfelül számos szabályozó rendszer vesz részt.
+            Ez a szabályozás elsősorban hormonális úton történik.
+            Az élettani vérnyomást befolyásolja a hormonális rendszer állapota, a napszak,
+            a fizikai aktivitás, az érzelmi állapot, az ébrenléti állapot, a fájdalom, a test folyadéktartalma, az étkezés,
+            de még a testhelyzet is.
+
+            Részletek: https://www.webbeteg.hu/cikkek/egeszseges/23355/vernyomas
+        </div>
+    </div>
+</div>
