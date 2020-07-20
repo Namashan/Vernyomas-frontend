@@ -8,6 +8,7 @@ import { IconsComponent } from '../../icons/icons.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {ForumComponent} from '../../Forum/forum/forum.component';
+import {CalendarComponent} from '../../calendar/calendar.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -56,5 +57,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'forum', component: ForumComponent},
+    { path: 'naplo', component: CalendarComponent}
 
 ];
