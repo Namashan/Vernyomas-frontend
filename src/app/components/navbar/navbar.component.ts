@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
+import {DashboardComponent} from '../../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-navbar',
@@ -121,9 +122,5 @@ export class NavbarComponent implements OnInit {
           }
       }
       return 'Dashboard';
-    }
-
-    onCLick() {
-        this.router.navigate()
     }
 }

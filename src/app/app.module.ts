@@ -15,6 +15,7 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ForumComponent } from './Forum/forum/forum.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    ForumComponent,
 
   ],
   providers: [],

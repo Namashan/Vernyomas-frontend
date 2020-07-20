@@ -4,8 +4,9 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
-const routes: Routes =[
+const routes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
@@ -17,14 +18,14 @@ const routes: Routes =[
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
     }]
-  }
+  },
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes,{
+    RouterModule.forRoot(routes, {
        useHash: true
     })
   ],
