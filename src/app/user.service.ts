@@ -3,6 +3,8 @@ import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {AbstractControl, ValidationErrors} from "@angular/forms";
+import {User} from '../interfaces/user';
+import {environment} from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +20,9 @@ export class UserService {
     } else {
       return {capital: true};
     }
+  }
+
+  addUser(user: User): Observable<any> {
+      return this.http.post(environment.apiEndpoint, {student: user}, {withCredentials: true});
   }
 }

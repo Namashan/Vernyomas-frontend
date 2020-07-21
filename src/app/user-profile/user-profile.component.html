@@ -1,4 +1,3 @@
-<form [formGroup]="form" (submit)="submitForm()">
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
@@ -8,18 +7,20 @@
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <div class="profile-container">
-                        <img (click)="fileInput.click()" class="profile-pic" src="https://img.icons8.com/dusk/64/000000/contract-job.png" alt="profile-picture"/>
+                            <img (click)="fileInput.click()" class="profile-pic"
+                                 src="https://img.icons8.com/dusk/64/000000/contract-job.png" alt="profile-picture"/>
                         </div>
                         <h4 class="card-title">Regisztráció</h4>
                         <p class="card-category">Töltse ki a mezőket! (Minden mezőt kötelező kitölteni!)</p>
 
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form [formGroup]="form" (submit)="submitForm()">
                             <div class="row">
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Felhasználónév" type="text" formControlName="username">
+                                        <input matInput placeholder="Felhasználónév" type="text"
+                                               formControlName="username">
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
@@ -29,7 +30,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Keresztnév" type="text" formControlName="firstname">
+                                        <input matInput placeholder="Keresztnév" type="text"
+                                               formControlName="firstname">
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
@@ -39,14 +41,21 @@
                                 </div>
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Jelszó" type="email" formControlName="password">
+                                        <input matInput placeholder="Jelszó" type="password" formControlName="password">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Születési dátum (éééé-hh-nn)" type="date"
+                                               formControlName="birthDate">
                                     </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Jelszó Megerősítés" type="text" formControlName="passwordConfirmation">
+                                        <input matInput placeholder="Jelszó Megerősítés" type="password"
+                                               formControlName="passwordConfirmation">
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -55,12 +64,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Test Magasság (cm)" type="text" formControlName="height">
+                                        <input matInput placeholder="Test Magasság (cm)" type="text"
+                                               formControlName="height">
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Test Súly (kg)" type="text" formControlName="weight">
+                                        <input matInput placeholder="Test Súly (kg)" type="text"
+                                               formControlName="weight">
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
@@ -82,7 +93,9 @@
                                     </div> -->
                                 </div>
                             </div>
-                            <button mat-raised-button type="submit" class="btn btn-danger pull-right" [disabled]="form.invalid">Mentés</button>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right"
+                                    [disabled]="form.invalid">Mentés
+                            </button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
@@ -91,4 +104,3 @@
         </div>
     </div>
 </div>
-</form>
