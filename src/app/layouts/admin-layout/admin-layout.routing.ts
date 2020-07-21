@@ -57,6 +57,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'forum', component: ForumComponent},
-    { path: 'naplo', component: CalendarComponent}
+    { path: 'schedule', component: CalendarComponent}
 
 ];
