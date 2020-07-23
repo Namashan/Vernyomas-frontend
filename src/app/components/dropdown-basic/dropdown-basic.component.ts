@@ -5,15 +5,17 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './dropdown-basic.component.html'
 })
 export class DropDownBasicComponent implements OnInit {
+  selectedValueBool : boolean;
   selectedValue: string;
   options: string [];
   constructor() {
-    this.options = ['Nő', 'Férfi', 'Egyéb']
+    this.options = ['Nő', 'Férfi']
   }
   ngOnInit() {
   }
 
   onCLick(opt: string) {
     this.selectedValue = opt;
+    this.selectedValueBool = "Nő"!== opt;
   }
 }

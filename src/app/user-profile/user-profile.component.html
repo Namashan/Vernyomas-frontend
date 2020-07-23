@@ -75,7 +75,11 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
-                                    <app-ngbd-dropdown-basic></app-ngbd-dropdown-basic>
+                                    <select class="custom-select" formControlName="isMale" ngModel="isMale">
+                                        <option value="" disabled>Nem</option>
+                                        <option ngValue="{{true}}">Férfi</option>
+                                        <option ngValue="{{false}}">Nő</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">

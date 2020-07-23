@@ -7,8 +7,8 @@ export interface User {
     passwordConfirmation: string;
     weight: number;
     height: number;
-    //isMale: boolean;
-    //birthDate: Date;
+    isMale: boolean;
+    birthDate: Date;
 
 
 }

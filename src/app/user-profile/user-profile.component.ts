@@ -25,9 +25,9 @@ export class UserProfileComponent implements OnInit {
       surname: new FormControl(null, [Validators.required, userService.checkCapital]),
       password: new FormControl(null, [Validators.required, Validators.min(8), Validators.max(40),]),
       passwordConfirmation: new FormControl(null, [Validators.required, Validators.min(8), Validators.max(40),]),
-      //birthDate: new FormControl(null),
+      birthDate: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.email, Validators.required]),
-      //isMale: new FormControl(null, [Validators.required]),
+      isMale: new FormControl(false),
       weight: new FormControl(null, [Validators.required, Validators.min(1), Validators.max(999)]),
       height: new FormControl(null, [Validators.required, Validators.min(120), Validators.max(250)]),
 
@@ -39,7 +39,7 @@ export class UserProfileComponent implements OnInit {
 
   submitForm() {
     const u: User = {
-      //birthDate: this.form.get('birthDate').value,
+      birthDate: this.form.get('birthDate').value,
       username: this.form.get('username').value,
       surname: this.form.get('surname').value,
       email: this.form.get('email').value,
@@ -48,7 +48,7 @@ export class UserProfileComponent implements OnInit {
       height: this.form.get('height').value,
       weight: this.form.get('weight').value,
       firstname: this.form.get('firstname').value,
-      //isMale: this.form.get('gender').value,
+      isMale: this.form.get('isMale').value,
     };
     this.userService.addUser(u).subscribe(response => {
 

@@ -3,11 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule }    from '@angular/platform-browser';
-import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
