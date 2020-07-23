@@ -9,8 +9,6 @@ import { CarouselComponent } from './carousel/carousel.component';
 import {NgbCarouselModule, NgbCollapseModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import { DropDownBasicComponent } from './dropdown-basic/dropdown-basic.component';
 import { CollapseBasicComponent } from './Collapse/collapse-basic/collapse-basic.component';
-import { ProfilComponent } from './profile/profil/profil.component';
-import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
     imports: [
@@ -19,7 +17,6 @@ import {MatInputModule} from '@angular/material/input';
         NgbCarouselModule,
         NgbDropdownModule,
         NgbCollapseModule,
-        MatInputModule,
     ],
   declarations: [
     FooterComponent,
@@ -28,7 +25,6 @@ import {MatInputModule} from '@angular/material/input';
     CarouselComponent,
     DropDownBasicComponent,
     CollapseBasicComponent,
-    ProfilComponent,
   ],
     exports: [
         FooterComponent,
@@ -36,7 +32,7 @@ import {MatInputModule} from '@angular/material/input';
         SidebarComponent,
         CarouselComponent,
         DropDownBasicComponent,
-        CollapseBasicComponent,
+        CollapseBasicComponent
     ]
 })
 export class ComponentsModule { }

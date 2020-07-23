@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import {ComponentsModule} from '../../components/components.module';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
     imports: [
         CommonModule,
@@ -29,6 +30,7 @@ import {ComponentsModule} from '../../components/components.module';
         MatSelectModule,
         MatTooltipModule,
         ComponentsModule,
+        MatIconModule,
     ],
     declarations: [
         DashboardComponent,

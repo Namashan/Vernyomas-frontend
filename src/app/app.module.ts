@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule }    from '@angular/platform-browser';
+
 
 
 import { AppRoutingModule } from './app.routing';
@@ -30,6 +31,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     RouterModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    BrowserModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
