@@ -5,10 +5,10 @@ import { UserProfileComponent } from '../../user-profile/user-profile.component'
 import { TableListComponent } from '../../table-list/table-list.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
-import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {ForumComponent} from '../../Forum/forum/forum.component';
 import {CalendarComponent} from '../../calendar/calendar.component';
+import {ProfilComponent} from '../../components/profile/profil/profil.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -55,8 +55,8 @@ export const AdminLayoutRoutes: Routes = [
     // }
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'notifications',  component: NotificationsComponent },
     { path: 'forum', component: ForumComponent},
-    { path: 'schedule', component: CalendarComponent}
+    { path: 'schedule', component: CalendarComponent},
+    { path: 'profile', component: ProfilComponent}
 
 ];
