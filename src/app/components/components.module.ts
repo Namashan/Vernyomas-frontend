@@ -26,7 +26,7 @@ import { ProfilComponent } from './profil/profil.component';
     CarouselComponent,
     DropDownBasicComponent,
     CollapseBasicComponent,
-      ProfilComponent
+      ProfilComponent,
   ],
     exports: [
         FooterComponent,
