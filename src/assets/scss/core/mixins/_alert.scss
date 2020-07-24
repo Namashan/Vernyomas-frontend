@@ -84,6 +84,13 @@
     ));
     @include call-variations-content-mixin($args-primary);
   }
+  &#{$component}-secondary#{$selector-suffix} {
+    $args-primary: map-merge($args, (
+            variation-color: $secondary,
+            variation-color-text: $mdb-text-color-light
+    ));
+    @include call-variations-content-mixin($args-primary);
+  }
   &#{$component}-success#{$selector-suffix} {
     $args-success: map-merge($args, (
             variation-color: $brand-success,
@@ -120,7 +127,6 @@
     ));
     @include call-variations-content-mixin($args-rose);
   }
-
 }
 
 @mixin alert-icon-color($color) {

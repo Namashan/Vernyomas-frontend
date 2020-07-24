@@ -11,49 +11,16 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h4 class="card-title">Tények!</h4>
-                        <div class="alert alert-primary">
-                            <span>Hogyan is működik a vérnyomás?</span>
-                            <app-collapse-basic></app-collapse-basic>
-                        </div>
-                        <div class="alert alert-danger">
-                            <span>Mi az a vérnyomásmérő?</span>
-                            <app-collapse-basic></app-collapse-basic>
-                        </div>
-                        <div class="alert alert-warning" data-notify="container">
-                            <span data-notify="message">A magas vérnyomás kockázatai.</span>
-                            <app-collapse-basic></app-collapse-basic>
-                        </div>
-                        <div class="alert alert-success" data-notify="container">
-                            <span data-notify="message">Az alacsony vérnyomás kockázatai.</span>
-                            <app-collapse-basic></app-collapse-basic>
-                        </div>
-                        <div class="alert alert-info" data-notify="container">
-                            <span data-notify="message">Mi az a pulzus?</span>
-                            <app-collapse-basic></app-collapse-basic>
+                        <div *ngFor="let ce of collapseElements | slice:0:4"  class="alert alert-secondary">
+
+                            <app-collapse-basic [displayedText]="ce.text" [displayedTitle]="ce.title"></app-collapse-basic>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <h4 class="card-title">Tanácsok!</h4>
-                        <div class="alert alert-info">
-                            <span>Mit tehetsz a vérnyomásod csökkentése érdekében?</span>
-                            <app-collapse-basic></app-collapse-basic>
+                        <div *ngFor="let ce of collapseElements | slice:4:8"  class="alert alert-secondary">
+                            <app-collapse-basic [displayedText]="ce.text" [displayedTitle]="ce.title"></app-collapse-basic>
                         </div>
-                        <div class="alert alert-success">
-                            <span>Mit tehetsz ha alacsony a vérnyomásod?</span>
-                            <app-collapse-basic></app-collapse-basic>
-                        </div>
-                        <div class="alert alert-warning">
-                            <span>Heves szívverés okai.</span>
-                            <app-collapse-basic></app-collapse-basic>
-                        </div>
-                        <div class="alert alert-danger">
-                            <span>Alacsony pulzus lehetséges okai.</span>
-                            <app-collapse-basic></app-collapse-basic>
-                        </div>
-                            <div class="alert alert-primary">
-                                <span>Magas pulzus lehetséges okai.</span>
-                                <app-collapse-basic></app-collapse-basic>
-                            </div>
                     </div>
                 </div>
             </div>
@@ -67,8 +34,8 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-10 ml-auto mr-auto">
                             <div class="row" id="mento1">
-                                <div class="alert alert-danger" id="mento2">
-                                    <h1>104</h1>
+                                <div class="alert alert-warning" id="mento2">
+                                    <h1>112</h1>
                                 </div>
                             </div>
                         </div>
