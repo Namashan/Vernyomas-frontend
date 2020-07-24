@@ -5,7 +5,7 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './dropdown-basic.component.html'
 })
 export class DropDownBasicComponent implements OnInit {
-  selectedValueBool : boolean;
+  selectedValueBool: boolean;
   selectedValue: string;
   options: string [];
   constructor() {
@@ -16,6 +16,6 @@ export class DropDownBasicComponent implements OnInit {
 
   onCLick(opt: string) {
     this.selectedValue = opt;
-    this.selectedValueBool = "Nő"!== opt;
+    this.selectedValueBool = 'Nő' !== opt;
   }
 }

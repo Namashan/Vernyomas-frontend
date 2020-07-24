@@ -9,6 +9,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import {NgbCarouselModule, NgbCollapseModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import { DropDownBasicComponent } from './dropdown-basic/dropdown-basic.component';
 import { CollapseBasicComponent } from './Collapse/collapse-basic/collapse-basic.component';
+import { ProfilComponent } from './profil/profil.component';
 
 @NgModule({
     imports: [
@@ -25,6 +26,7 @@ import { CollapseBasicComponent } from './Collapse/collapse-basic/collapse-basic
     CarouselComponent,
     DropDownBasicComponent,
     CollapseBasicComponent,
+      ProfilComponent
   ],
     exports: [
         FooterComponent,
@@ -32,7 +34,8 @@ import { CollapseBasicComponent } from './Collapse/collapse-basic/collapse-basic
         SidebarComponent,
         CarouselComponent,
         DropDownBasicComponent,
-        CollapseBasicComponent
+        CollapseBasicComponent,
+        ProfilComponent
     ]
 })
 export class ComponentsModule { }
