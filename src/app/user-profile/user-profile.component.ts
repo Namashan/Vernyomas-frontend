@@ -24,18 +24,19 @@ export class UserProfileComponent implements OnInit {
       firstname: new FormControl(null, [Validators.required, Validators.maxLength(50), userService.checkCapital]),
       surname: new FormControl(null, [Validators.required, userService.checkCapital]),
       password: new FormControl(null, [Validators.required, Validators.min(8), Validators.max(40),]),
-      passwordConfirmation: new FormControl(null, [Validators.required, Validators.min(8), Validators.max(40),]),
+      passwordConfirmation: new FormControl(null, [Validators.required, Validators.min(8), Validators.max(40)]),
       birthDate: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.email, Validators.required]),
-      isMale: new FormControl(false),
+      isMale: new FormControl('', Validators.required),
       weight: new FormControl(null, [Validators.required, Validators.min(1), Validators.max(999)]),
       height: new FormControl(null, [Validators.required, Validators.min(120), Validators.max(250)]),
 
-    });
+    }, [userService.checkPassword]);
   }
 
   ngOnInit(): void {
   }
+
 
   submitForm() {
     const u: User = {

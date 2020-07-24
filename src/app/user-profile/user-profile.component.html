@@ -46,16 +46,16 @@
                                 </div>
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Születési dátum (éééé-hh-nn)" type="date"
-                                               formControlName="birthDate">
+                                        <input matInput placeholder="Jelszó Megerősítés" type="password"
+                                               formControlName="passwordConfirmation">
                                     </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Jelszó Megerősítés" type="password"
-                                               formControlName="passwordConfirmation">
+                                        <input matInput placeholder="Születési dátum (éééé-hh-nn)" type="date"
+                                               formControlName="birthDate">
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="custom-select" formControlName="isMale" ngModel="isMale">
+                                    <select class="custom-select" formControlName="isMale">
                                         <option value="" disabled>Nem</option>
                                         <option ngValue="{{true}}">Férfi</option>
                                         <option ngValue="{{false}}">Nő</option>

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiEndpoint: 'https://bloodpressurediary.herokuapp.com/user/register'
+  apiEndpoint: 'https://bloodpressurediary.herokuapp.com/'
 };

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
-import {AbstractControl, ValidationErrors} from "@angular/forms";
+import {AbstractControl, FormGroup, ValidationErrors} from '@angular/forms';
 import {User} from '../interfaces/user';
 import {environment} from '../environments/environment.prod';
 
@@ -22,7 +22,16 @@ export class UserService {
     }
   }
 
+  checkPassword(group: FormGroup): ValidationErrors | null {
+    if (group.get('password').value === group.get('passwordConfirmation').value){
+      return null;
+    } else{
+      return { 'passwords-not-match' : true };
+    }
+  }
+
   addUser(user: User): Observable<any> {
-      return this.http.post(environment.apiEndpoint, {student: user}, {withCredentials: true});
+    const u = {...user, isMale: user.isMale === 'true'};
+      return this.http.post(environment.apiEndpoint + 'user/register', u, {withCredentials: true});
   }
 }
