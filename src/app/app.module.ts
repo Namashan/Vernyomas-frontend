@@ -23,6 +23,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { LoginmodalComponent } from './loginmodal/loginmodal.component';
+import { DiagramComponent } from './diagram/diagram.component';
 
 @NgModule({
   imports: [
@@ -48,6 +49,7 @@ import { LoginmodalComponent } from './loginmodal/loginmodal.component';
     ForumComponent,
     CalendarComponent,
     LoginmodalComponent,
+    DiagramComponent,
 
   ],
   providers: [],

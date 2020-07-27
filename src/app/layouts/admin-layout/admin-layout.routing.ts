@@ -9,6 +9,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {ForumComponent} from '../../Forum/forum/forum.component';
 import {CalendarComponent} from '../../calendar/calendar.component';
 import {ProfilComponent} from '../../components/profile/profil/profil.component';
+import {DiagramComponent} from '../../diagram/diagram.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -53,10 +54,11 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: 'dashboard',      component: DashboardComponent },
-    { path: 'user-profile',   component: UserProfileComponent },
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'user-profile', component: UserProfileComponent },
     { path: 'forum', component: ForumComponent},
     { path: 'schedule', component: CalendarComponent},
-    { path: 'profile', component: ProfilComponent}
+    { path: 'profile', component: ProfilComponent},
+    { path: 'diagram', component: DiagramComponent},
 
 ];
