@@ -24,25 +24,28 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { LoginmodalComponent } from './loginmodal/loginmodal.component';
 import { DiagramComponent } from './diagram/diagram.component';
+import {MatButtonModule} from '@angular/material/button';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
-  imports: [
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    ComponentsModule,
-    RouterModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-    HttpClientModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    }),
-    NgbModule,
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
-  ],
+    imports: [
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpModule,
+        ComponentsModule,
+        RouterModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        BrowserModule,
+        HttpClientModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
+        }),
+        NgbModule,
+        CalendarModule.forRoot({provide: DateAdapter, useFactory: adapterFactory}),
+        MatButtonModule
+    ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
@@ -50,6 +53,7 @@ import { DiagramComponent } from './diagram/diagram.component';
     CalendarComponent,
     LoginmodalComponent,
     DiagramComponent,
+    ResultsComponent,
 
   ],
   providers: [],

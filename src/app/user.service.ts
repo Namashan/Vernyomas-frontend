@@ -5,12 +5,13 @@ import {map} from "rxjs/operators";
 import {AbstractControl, FormGroup, ValidationErrors} from '@angular/forms';
 import {User} from '../interfaces/user';
 import {environment} from '../environments/environment.prod';
+import {Values} from '../interfaces/values';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  constructor(private http: HttpClient) {
+  constructor(public http: HttpClient) {
   }
 
   checkCapital(control: AbstractControl): ValidationErrors | null {
@@ -34,4 +35,5 @@ export class UserService {
     const u = {...user, isMale: user.isMale === 'true'};
       return this.http.post(environment.apiEndpoint + 'user/register', u, {withCredentials: true});
   }
+
 }
