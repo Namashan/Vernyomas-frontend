@@ -1,41 +1,59 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../user.service';
 
+import {ActivatedRoute, Router} from "@angular/router";
+import {first} from "rxjs/operators";
+import {AlertService, AuthenticationService} from "../_services";
+
 @Component({
-  selector: 'app-loginmodal',
-  templateUrl: './loginmodal.component.html',
+    selector: 'app-loginmodal',
+    templateUrl: './loginmodal.component.html',
 })
 export class LoginmodalComponent implements OnInit {
+    loading = false;
+    form: FormGroup;
+    private returnUrl: string;
 
-  form: FormGroup;
-  constructor(public activeModal: NgbActiveModal, private userService: UserService) {
-    this.form = new FormGroup({
-      userName: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
-      password: new FormControl(null, [Validators.required])
-    });
-  }
+    constructor(public activeModal: NgbActiveModal,
+                private userService: UserService,
+                private formBuilder: FormBuilder,
+                private route: ActivatedRoute,
+                private router: Router,
+                private authenticationService: AuthenticationService,
+                private alertService : AlertService,
+    ) {
+        this.form = new FormGroup({
+            userName: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
+            password: new FormControl(null, [Validators.required])
+        });
+    }
 
-  ngOnInit(): void {
-  }
+    get f() {
+        return this.form.controls;
+    }
 
-  // login(): void {
-  //   const user: UserLogin = {
-  //     userName: this.form.get('userName').value,
-  //     password: this.form.get('password').value
-  //   };
-  //   console.log(JSON.stringify(user));
-  //   this.userService.login(user).subscribe((response) => {
-  //     if (response.success) {
-  //       this.userService.setUser(user);
-  //       this.activeModal.dismiss();
-  //     }
-  //     // alert(response.message);
-  //   }, error => {
-  //     alert(error.message);
-  //   });
-  //
-  // }
+    ngOnInit() {
+        this.form = this.formBuilder.group({
+            username: ['', Validators.required],
+            password: ['', Validators.required]
+        });
 
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    }
+
+    login() {
+        this.authenticationService.login(this.f.username.value, this.f.password.value)
+            .pipe(first())
+            .subscribe(
+                response => {
+                    // this.router.navigate([this.returnUrl]);
+                    this.activeModal.dismiss();
+                },
+                error => {
+                    this.alertService.error(error);
+                    this.loading = false;
+                });
+    }
 }
