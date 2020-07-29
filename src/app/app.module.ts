@@ -26,6 +26,7 @@ import { LoginmodalComponent } from './loginmodal/loginmodal.component';
 import { DiagramComponent } from './diagram/diagram.component';
 import {MatButtonModule} from '@angular/material/button';
 import { ResultsComponent } from './results/results.component';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
     imports: [
@@ -54,6 +55,7 @@ import { ResultsComponent } from './results/results.component';
     LoginmodalComponent,
     DiagramComponent,
     ResultsComponent,
+    ChartComponent,
 
   ],
   providers: [],

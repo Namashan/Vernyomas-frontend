@@ -134,12 +134,12 @@
 }
 
  #pointer{
-    width: 3.5%;
-    height: 3.5%;
+    width: 20px;
+    height: 20px;
     content: url(https://img.icons8.com/material-outlined/24/000000/solar-cross.png);
     object-fit: cover;
     position: absolute;
     z-index: 10;
-     top: 0px;
-     bottom: 0px;
+     margin-bottom: -10px;
+     margin-left: -10px;
 }

@@ -36,4 +36,8 @@ export class UserService {
       return this.http.post(environment.apiEndpoint + 'user/register', u, {withCredentials: true});
   }
 
+  sendData(value: Values): Observable<any> {
+    return this.http.post(environment.apiEndpoint + 'measure_details', value, {withCredentials: true});
+  }
+
 }

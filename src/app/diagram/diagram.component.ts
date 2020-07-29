@@ -15,41 +15,39 @@ export class DiagramComponent implements OnInit {
     @Input()
     inputUser: Values;
 
-    public top: number;
-    public left: number;
+    pointerX: number;
+    pointerY: number;
     form: FormGroup;
 
     constructor(private userService: UserService) {
         this.form = new FormGroup({
             //conditionId: new FormControl('', [Validators.required]),
-            systolic: new FormControl('', [Validators.required,]),
-            diastolic: new FormControl('', [Validators.required]),
-            pulse: new FormControl('', [Validators.required]),
+            systolic: new FormControl(0, [Validators.required, Validators.min(1)]),
+            diastolic: new FormControl(0, [Validators.required]),
+            pulse: new FormControl(0, [Validators.required]),
         })
     }
 
     ngOnInit(): void {
     }
 
-    calculate(systolic:string, diastolic:string) {
-        document.getElementById('pointer').style.top = systolic;
-        document.getElementById('pointer').style.left = diastolic;
-
+    calculate() {
+        const sys = this.form.get('systolic').value;
+        const dia = this.form.get('diastolic').value;
+        this.pointerX = Math.max(0, Math.min(1, sys / 200)) * 500;
+        this.pointerY = Math.max(0, Math.min(1, dia / 120)) * 500
     }
 
-    sendData(value: Values): Observable<any> {
-        return this.userService.http.post(environment.apiEndpoint + 'measure_details', value, {withCredentials: true});
-    }
 
-    submitForm() {
+    submitForm2() {
 
-        const data: Values = {
+        const d: Values = {
             //conditionId: this.form.get('day').value,
             systolic: this.form.get('systolic').value,
             diastolic: this.form.get('diastolic').value,
             pulse: this.form.get('pulse').value,
         };
-        this.sendData(data).subscribe(response => {
+        this.userService.sendData(d).subscribe(response => {
 
         });
     }

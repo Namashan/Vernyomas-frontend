@@ -18,6 +18,8 @@ export const ROUTES: RouteInfo[] = [
     {path: '/forum', title: 'Tudnivalók', icon: 'forum', class: ''},
     {path: '/schedule', title: 'Napló', icon: 'schedule', class: ''},
     {path: '/diagram', title: 'Diagram', icon: 'donut_large', class: ''},
+    {path: '/chart', title: 'Kiértékelő oldal', icon: 'forum', class: ''},
+
 ];
 
 @Component({
