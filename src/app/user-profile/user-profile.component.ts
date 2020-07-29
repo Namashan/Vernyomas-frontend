@@ -1,10 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component,  Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../user.service';
 import {User} from '../../interfaces/user';
-import {Observable} from 'rxjs';
-import {environment} from '../../environments/environment.prod';
-
 
 
 @Component({

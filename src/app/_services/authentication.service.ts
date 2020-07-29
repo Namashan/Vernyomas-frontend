@@ -1,9 +1,9 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import {User} from "../../interfaces/user";
+import {environment} from "../../environments/environment.prod";
 import {map} from "rxjs/operators";
-import {User} from './interfaces/user';
-import {environment} from './environments/environment';
 
 
 
@@ -25,7 +25,7 @@ export class AuthenticationService {
         const fd = new FormData();
         fd.append('username', username);
         fd.append('password', password);
-        return this.http.post<any>(environment.apiEndpoint + "login", fd, {withCredentials: true})
+        return this.http.post<any>(environment.apiEndpoint + "login", fd)
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('currentUser', JSON.stringify(user));
