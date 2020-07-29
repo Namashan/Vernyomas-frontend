@@ -100,7 +100,7 @@
   }
   &#{$component}-info#{$selector-suffix} {
     $args-info: map-merge($args, (
-            variation-color: $brand-info,
+            variation-color: $brand-danger,
             variation-color-text: $mdb-text-color-light
     ));
     @include call-variations-content-mixin($args-info);
@@ -134,3 +134,5 @@
         color: $color;
     }
 }
+
+

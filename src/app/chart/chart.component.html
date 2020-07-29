@@ -1,0 +1,27 @@
+<div class="header ">
+<h1 class="title">Kiértékelő oldal</h1>
+</div>
+<div class="content">
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-1">
+    <ngb-panel title="Időjárás jelentés a mai napra">
+        <ng-template ngbPanelContent>
+
+        </ng-template>
+    </ngb-panel>
+        <ngb-panel title="Orvosmeterológiai jelentés a mai napra">
+            <ng-template ngbPanelContent>
+
+            </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Kor alapján kalkulált ideális vérnyomás az Ön számára">
+            <ng-template ngbPanelContent>
+
+            </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Vérnyomás kategória az aktuális mérés alapján">
+            <ng-template ngbPanelContent>
+                <app-diagram></app-diagram>
+            </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+</div>

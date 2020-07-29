@@ -8,7 +8,8 @@ import { IconsComponent } from '../../icons/icons.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {ForumComponent} from '../../Forum/forum/forum.component';
 import {CalendarComponent} from '../../calendar/calendar.component';
-import {ProfilComponent} from '../../components/profile/profil/profil.component';
+import {ProfilComponent} from '../../components/profil/profil.component';
+
 
 export const AdminLayoutRoutes: Routes = [
     // {

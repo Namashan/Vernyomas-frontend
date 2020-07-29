@@ -16,7 +16,10 @@ export const ROUTES: RouteInfo[] = [
     {path: '/user-profile', title: 'Regisztráció', icon: 'assignment', class: ''},
     {path: '/profile', title: 'Profil', icon: 'person', class: ''},
     {path: '/forum', title: 'Tudnivalók', icon: 'forum', class: ''},
-    {path: '/schedule', title: 'Napló', icon: 'forum', class: ''},
+    {path: '/schedule', title: 'Napló', icon: 'schedule', class: ''},
+    {path: '/diagram', title: 'Diagram', icon: 'donut_large', class: ''},
+    {path: '/chart', title: 'Kiértékelő oldal', icon: 'forum', class: ''},
+
 ];
 
 @Component({

@@ -5,6 +5,7 @@ import {AbstractControl, FormGroup, ValidationErrors} from '@angular/forms';
 import {User} from '../interfaces/user';
 import {environment} from '../environments/environment.prod';
 import {UserLogin} from "../interfaces/user-login";
+import {Values} from '../interfaces/values';
 
 @Injectable({
   providedIn: 'root'
@@ -32,10 +33,11 @@ export class UserService {
 
   addUser(user: User): Observable<any> {
     const u = {...user, isMale: user.isMale === 'true'};
-      return this.http.post(environment.apiEndpoint + 'register', u, {withCredentials: true});
+      return this.http.post(environment.apiEndpoint + 'user/register', u, {withCredentials: true});
   }
 
-  login(user: UserLogin): Observable<any> {
-    return this.http.post(environment.apiEndpoint + 'login', user, {withCredentials: true})
+  sendData(value: Values): Observable<any> {
+    return this.http.post(environment.apiEndpoint + 'measure_details', value, {withCredentials: true});
   }
+
 }
