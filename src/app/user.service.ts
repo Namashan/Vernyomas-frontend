@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {map} from "rxjs/operators";
 import {AbstractControl, FormGroup, ValidationErrors} from '@angular/forms';
 import {User} from '../interfaces/user';
 import {environment} from '../environments/environment.prod';
+import {UserLogin} from "../interfaces/user-login";
 import {Values} from '../interfaces/values';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  constructor(public http: HttpClient) {
+  constructor(private http: HttpClient) {
   }
 
   checkCapital(control: AbstractControl): ValidationErrors | null {
