@@ -27,6 +27,7 @@ export class DiagramComponent implements OnInit {
             pulse: new FormControl("", [Validators.required, Validators.max(140)]),
         })
     }
+
     ngOnInit(): void {
     }
 
