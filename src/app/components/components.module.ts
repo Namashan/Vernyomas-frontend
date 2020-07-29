@@ -10,6 +10,7 @@ import {NgbCarouselModule, NgbCollapseModule, NgbDropdownModule} from '@ng-boots
 import { DropDownBasicComponent } from './dropdown-basic/dropdown-basic.component';
 import { CollapseBasicComponent } from './Collapse/collapse-basic/collapse-basic.component';
 import { ProfilComponent } from './profil/profil.component';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import { ProfilComponent } from './profil/profil.component';
         NgbCarouselModule,
         NgbDropdownModule,
         NgbCollapseModule,
+        MatInputModule,
     ],
   declarations: [
     FooterComponent,

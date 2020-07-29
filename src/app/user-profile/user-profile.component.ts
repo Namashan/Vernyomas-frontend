@@ -21,8 +21,8 @@ export class UserProfileComponent implements OnInit {
   constructor(private userService: UserService) {
     this.form = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.maxLength(20)]),
-      firstname: new FormControl(null, [Validators.required, Validators.maxLength(50), userService.checkCapital]),
-      surname: new FormControl(null, [Validators.required, userService.checkCapital]),
+      firstname: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      lastname: new FormControl('', [Validators.required]),
       password: new FormControl(null, [Validators.required, Validators.min(8), Validators.max(40),]),
       passwordConfirmation: new FormControl(null, [Validators.required, Validators.min(8), Validators.max(40)]),
       birthDate: new FormControl(null, [Validators.required]),
@@ -42,7 +42,7 @@ export class UserProfileComponent implements OnInit {
     const u: User = {
       birthDate: this.form.get('birthDate').value,
       username: this.form.get('username').value,
-      surname: this.form.get('surname').value,
+      lastname: this.form.get('lastname').value,
       email: this.form.get('email').value,
       password: this.form.get('password').value,
       passwordConfirmation: this.form.get('passwordConfirmation').value,

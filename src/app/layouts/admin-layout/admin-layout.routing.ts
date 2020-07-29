@@ -58,5 +58,4 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'forum', component: ForumComponent},
     { path: 'schedule', component: CalendarComponent},
     { path: 'profile', component: ProfilComponent}
-
 ];

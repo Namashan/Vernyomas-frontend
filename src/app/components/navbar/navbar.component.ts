@@ -4,7 +4,9 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 import { Router } from '@angular/router';
 import {DashboardComponent} from '../../dashboard/dashboard.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {LoginComponent} from '../login/login.component';
+import {LoginmodalComponent} from '../../loginmodal/loginmodal.component';
+import {UserService} from '../../user.service';
+import {LoginService} from '../../services/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -18,7 +20,8 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location,  private element: ElementRef, private router: Router, private modalService: NgbModal) {
+    constructor(location: Location,  private element: ElementRef, private router: Router, private modalService: NgbModal,
+                private loginService: LoginService) {
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -35,6 +38,11 @@ export class NavbarComponent implements OnInit {
            this.mobile_menu_visible = 0;
          }
      });
+    }
+
+    openModal(){
+        this.modalService.open(LoginmodalComponent);
+
     }
 
     sidebarOpen() {
