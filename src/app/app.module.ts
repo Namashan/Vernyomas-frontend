@@ -5,12 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule }    from '@angular/platform-browser';
-
-
-
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
-
 import { AppComponent } from './app.component';
 
 import {
@@ -23,6 +19,9 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { LoginmodalComponent } from './loginmodal/loginmodal.component';
+import {DiagramComponent} from './diagram/diagram.component';
+import {ChartComponent} from './chart/chart.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -40,7 +39,8 @@ import { LoginmodalComponent } from './loginmodal/loginmodal.component';
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
     NgbModule,
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+    CalendarModule.forRoot({provide: DateAdapter, useFactory: adapterFactory}),
+    MatButtonModule
   ],
   declarations: [
     AppComponent,
@@ -48,6 +48,8 @@ import { LoginmodalComponent } from './loginmodal/loginmodal.component';
     ForumComponent,
     CalendarComponent,
     LoginmodalComponent,
+      DiagramComponent,
+      ChartComponent,
 
   ],
   providers: [],

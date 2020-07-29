@@ -3,7 +3,6 @@
     justify-content: center;
     flex-wrap: wrap;
     width: 70%;
-    background: #eee;
     margin: 40px auto;
     position: relative;
     text-align:center;
@@ -18,7 +17,7 @@
     bottom: 0;
     top: 0;
     text-align: left;
-    box-shadow: 5px -5px 18px #131313;
+    box-shadow: 3px -3px 8px #131313;
 
 }
 
@@ -32,7 +31,7 @@
     position: absolute;
     border-top: white 2px solid;
     border-right: white 2px solid;
-    box-shadow: 5px -5px 18px #131313;
+    box-shadow: 3px -3px 8px #131313;
 }
 
 .stage1 {
@@ -45,7 +44,7 @@
     position: absolute;
     border-top: white 2px solid;
     border-right: white 2px solid;
-    box-shadow: 5px -5px 18px #131313;
+    box-shadow: 3px -3px 8px #131313;
 
 }
 
@@ -59,7 +58,7 @@
     left: 0;
     border-top: white 2px solid;
     border-right: white 2px solid;
-    box-shadow: 5px -5px 18px #131313;
+    box-shadow: 3px -3px 8px #131313;
 
 }
 
@@ -73,7 +72,7 @@
     left: 0;
     border-top: white 2px solid;
     border-right: white 2px solid;
-    box-shadow: 5px -5px 18px #131313;
+    box-shadow: 3px -3px 8px #131313;
 
 }
 
@@ -87,7 +86,7 @@
     left: 0;
     border-top: white 2px solid;
     border-right: white 2px solid;
-    box-shadow: 5px -5px 18px #131313;
+    box-shadow: 3px -3px 8px #131313;
 
 }
 
@@ -101,7 +100,7 @@
     left: 0;
     border-top: white 2px solid;
     border-right: white 2px solid;
-    box-shadow: 5px -5px 18px #131313;
+    box-shadow: 3px -3px 8px #131313;
 
 }
 
@@ -134,9 +133,9 @@
 }
 
  #pointer{
-    width: 20px;
-    height: 20px;
-    content: url(https://img.icons8.com/material-outlined/24/000000/solar-cross.png);
+    width: 30px;
+    height: 30px;
+    content: url(https://img.icons8.com/bubbles/50/000000/blood-drawing.png);
     object-fit: cover;
     position: absolute;
     z-index: 10;

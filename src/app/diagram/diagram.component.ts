@@ -21,28 +21,28 @@ export class DiagramComponent implements OnInit {
 
     constructor(private userService: UserService) {
         this.form = new FormGroup({
-            //conditionId: new FormControl('', [Validators.required]),
-            systolic: new FormControl(0, [Validators.required, Validators.min(1)]),
-            diastolic: new FormControl(0, [Validators.required]),
-            pulse: new FormControl(0, [Validators.required]),
+            conditionId: new FormControl('', [Validators.required]),
+            systolic: new FormControl("", [Validators.required, Validators.min(1), Validators.max(200)]),
+            diastolic: new FormControl("", [Validators.required, Validators.max(140)]),
+            pulse: new FormControl("", [Validators.required, Validators.max(140)]),
         })
     }
-
     ngOnInit(): void {
     }
 
     calculate() {
         const sys = this.form.get('systolic').value;
         const dia = this.form.get('diastolic').value;
-        this.pointerX = Math.max(0, Math.min(1, sys / 200)) * 500;
-        this.pointerY = Math.max(0, Math.min(1, dia / 120)) * 500
+        this.pointerX = Math.max(0, Math.min(1, dia / 120)) * 500;
+        this.pointerY = Math.max(0, Math.min(1, sys / 200)) * 500;
+        document.getElementById("pointer").style.display ="";
     }
 
 
-    submitForm2() {
+    submitForm() {
 
         const d: Values = {
-            //conditionId: this.form.get('day').value,
+            conditionId: this.form.get('conditionId').value,
             systolic: this.form.get('systolic').value,
             diastolic: this.form.get('diastolic').value,
             pulse: this.form.get('pulse').value,

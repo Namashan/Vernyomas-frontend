@@ -1,10 +1,10 @@
 <h2>Diagram</h2>
 <div class="container" style="">
     <div class="stage3"><span class="diagramtext">Hipertónia 3</span>
-        <div id="pointer" [ngStyle]="{ bottom: pointerY+'px', left: pointerX+'px' }"></div>
+        <div id="pointer" [ngStyle]="{ bottom: pointerY+'px', left: pointerX+'px' }" style="display: none"></div>
         <div class="stage2"><span class="diagramtext">Hipertónia 2</span>
             <div class="stage1"><span class="diagramtext">Hipertónia 1</span>
-                <div class="highnormal"><span class="diagramtext">Magas</span>
+                <div class="highnormal"><span class="diagramtext">Emelkedett</span>
                     <div class="normal"><span class="diagramtext">Normális</span>
                         <div class="ideal"><span class="diagramtext">Ideális</span>
                             <div class="low"><span class="diagramtext">Alacsony</span></div>
@@ -17,11 +17,12 @@
 </div>
 
 <div class="valuebuttons">
-    <form [formGroup]="form" (submit)="submitForm2()">
+    <form [formGroup]="form" (submit)="submitForm()">
     <input class="firstvalue" placeholder="Szisztolés érték" type="text" formControlName="systolic">
     <input class="secondvalue" placeholder="Diasztolés érték" type="text" formControlName="diastolic">
     <input class="pulse" placeholder="Pulzus" type="text" formControlName="pulse">
-    <select class="select" formControlName="day" placeholder="Napszak kiválasztása">
+    <select class="select" formControlName="conditionId">
+        <option value="0" disabled selected>Napszak kiválasztása</option>
         <option value="1">Reggel, ébredés után</option>
         <option value="2">Este, elalvás előtt</option>
         <option value="3">Sportolás után</option>

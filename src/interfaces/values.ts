@@ -1,5 +1,5 @@
 export interface Values {
-    //conditionId: string;
+    conditionId: string;
     systolic: string;
     diastolic: string;
     pulse: string;

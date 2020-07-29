@@ -33,7 +33,7 @@ export class UserService {
 
   addUser(user: User): Observable<any> {
     const u = {...user, isMale: user.isMale === 'true'};
-      return this.http.post(environment.apiEndpoint + 'user/register', u, {withCredentials: true});
+      return this.http.post(environment.apiEndpoint + 'register', u, {withCredentials: true});
   }
 
   sendData(value: Values): Observable<any> {

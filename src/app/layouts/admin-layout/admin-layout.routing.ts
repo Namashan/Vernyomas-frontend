@@ -2,13 +2,11 @@ import { Routes } from '@angular/router';
 
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
-import { TableListComponent } from '../../table-list/table-list.component';
-import { TypographyComponent } from '../../typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
-import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {ForumComponent} from '../../Forum/forum/forum.component';
 import {CalendarComponent} from '../../calendar/calendar.component';
 import {ProfilComponent} from '../../components/profil/profil.component';
+import {DiagramComponent} from '../../diagram/diagram.component';
+import {ChartComponent} from '../../chart/chart.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -58,6 +56,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'forum', component: ForumComponent},
     { path: 'schedule', component: CalendarComponent},
-    { path: 'profile', component: ProfilComponent}
+    { path: 'profile', component: ProfilComponent},
+    { path: 'diagram', component: DiagramComponent},
+    { path: 'chart', component: ChartComponent}
 
 ];

@@ -22,7 +22,10 @@ export class AuthenticationService {
     }
 
     login(username, password) {
-        return this.http.post<any>(environment.apiEndpoint + "login", { username, password })
+        const fd = new FormData();
+        fd.append('username', username);
+        fd.append('password', password);
+        return this.http.post<any>(environment.apiEndpoint + "login", fd)
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('currentUser', JSON.stringify(user));
