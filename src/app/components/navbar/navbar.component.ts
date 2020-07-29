@@ -40,7 +40,7 @@ export class NavbarComponent implements OnInit {
      });
     }
 
-    openModal(){
+    openModal() {
         this.modalService.open(LoginmodalComponent);
 
     }

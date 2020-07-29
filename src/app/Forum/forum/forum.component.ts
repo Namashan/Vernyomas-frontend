@@ -9,121 +9,136 @@ export class ForumComponent implements OnInit {
   collapseElements: CollapseElement [];
   constructor() {
     this.collapseElements = [];
-    const collapseElem0 = new CollapseElement('Hogyan is működik a vérnyomás?', 'A szervezet vérellátásának fenntartásában,' +
-        ' a vér keringetésében a perifériás erekben a szív vesz részt.' +
-        ' A szív pumpafunkciója segíti a vér áramlását az artériás rendszerben.' +
-        ' A tüdőereken keresztül pedig oxigénnel dúsított vérre cserélődik az „elhasználódott vér”.' +
-        ' A minden egyes szívösszehúzódás során továbbított vér mennyiségének (pulzustérfogat)' +
-        ' és a percenkénti szívösszehúzódások számának (pulzus) szorzata adja meg a perctérfogatot,' +
-        ' vagyis az egy perc alatt a nagyvérkörbe áramló vér mennyiségét.' +
-        ' A nagyerekbe kerülő vér nyomást gyakorol az egyébként élettanilag rugalmas erek falára.' +
-        ' Ez adja a vérnyomást, mely mérhető.' +
-        ' A vérnyomás legmagasabb értéke a szívösszehúzódás alatt,' +
-        ' legalacsonyabb értéke a szív elernyedése alatt alakul ki.' +
-        ' Ez a két érték adja a mérhető vérnyomás felső (szisztolés érték),' +
-        ' illetve alsó (diasztolés érték) értékét.' +
-        ' A szisztolés nyomások értékét pedig alapvetően az erek falának rugalmassága' +
-        ' (pl. meszes ereknél csökken a rugalmasság),' +
-        ' illetve a percenkénti nagyerekbe pumpált vérmennyiség határozza meg.' +
-        ' A vérnyomás szabályozásában ezenfelül számos szabályozó rendszer vesz részt.' +
-        ' Ez a szabályozás elsősorban hormonális úton történik.' +
-        ' Az élettani vérnyomást befolyásolja a hormonális rendszer állapota,' +
-        ' a napszak, a fizikai aktivitás, az érzelmi állapot, az ébrenléti állapot,' +
-        ' a fájdalom, a test folyadéktartalma, az étkezés, de még a testhelyzet is.\n' +
+    const collapseElem0 = new CollapseElement('Alacsony vérnyomás!', '' +
+        'Amennyiben szükség van az alacsony vérnyomás kezelésére,' +
+        ' és ismerjük a betegség kiváltó okát, az okot kell kizárni,' +
+        ' és a probléma is megoldódik. Otthoni praktikákkal, így a méz-,' +
+        ' a nyers tojássárgája illetve ugyancsak nyers zabkása fogyasztásával emelhetjük a vérnyomást.\n' +
         '\n' +
-        'Részletek: https://www.webbeteg.hu/cikkek/egeszseges/23355/vernyomas')
+        'Segít, ha – ellentétben azokkal, akik magas vérnyomással küzdenek – ' +
+        'több sót és folyadékot fogyaszt az ember. Akár 3 liter vizet is naponta.' +
+        ' A betegek ne egyenek az étkezések alkalmával túl sokat.' +
+        ' A több sóval a nátriumbevitel is emelkedik,' +
+        ' amelynek a szokásos adagnál 5-10 milligrammal többnek kell lennie alacsony vérnyomás esetén.' +
+        ' Az alkoholt kerüljük!\n' +
+        '\n' +
+        'Sportoljon a beteg, az mindig segít; a tünetek akár meg is szűnhetnek.' +
+        ' Reggelente csak óvatosan keljen ki az ágyból, először üljön egy kicsit, csak aztán álljon fel.' +
+        '  A reggeli torna – akár néhány perces is – segíthet a vérnyomás emelésében.' +
+        ' Szaunázni ajánlott, de a hideg vizes váltózuhany is segíthet.' +
+        ' Amennyiben hosszú ideje ágyban fekvő betegről van szó, megelőzhető az alacsony vérnyomás,' +
+        ' ha minden nap felültetik egy kicsit.\n' +
+        '\n' +
+        'A természetes gyógymódok közül ajánlható alacsony vérnyomás kezelésére a borsmenta, a rozmaring.' +
+        ' Hatásuk együtt különösen jó: ötven grammot keverjünk össze mindkettőből a gyógyteához.' +
+        ' Napi kétszer érdemes kortyolgatni. A rozmaringból készült tea magában is alkalmas az alacsony vérnyomás kezelésére,' +
+        ' ezt inkább reggel igyuk. Majorannából is főzhetünk teát a betegségre – szintén a reggeli órákban érdemes inni.\n' +
+        '\n' +
+        'A borsmenta és a rozmaring illóolajként is alkalmazható, akárcsak a kámfor vagy a kakukkfű:' +
+        ' párologtatva vagy fürdővízbe téve használjuk.')
     this.collapseElements.push(collapseElem0)
-    const collapseElem1 = new CollapseElement('Mi az a vérnyomásmérő?', 'A vérnyomást vérnyomásmérő készülékekkel mérjük.' +
-        ' Egy ilyen készülék tipikusan két alkotórésszel rendelkezik, a felfújható,' +
-        ' kart körbevevő, a páciens szívével körülbelül egy magasságba felhelyezendő mandzsettával' +
-        ' és a mérőeszközzel, ami a mandzsetta nyomását méri.\n' +
-        '\n' +
-        'A vérnyomásmérő két vérnyomnyomási értéket nér: a szisztolés és a diasztolés értéket.' +
-        ' A szisztolés vérnyomás magasabb, mivel azt a nyomást mutatja,' +
-        ' ami a szív összehúzódásakor alakul ki az artériákban,' +
-        ' míg a diasztolés vérnyomás a szív pihenése és vérrel való feltöltődése közben mérhető nyomást jelzi.' +
-        ' Így például a vérnyomás lehet 120/80 értékű.\n' +
-        '\n' +
-        'A vérnyomásmérők lehetnek kézi vagy digitális készülékek,' +
-        ' de az otthoni vérnyomásmérők általában digitálisak' +
-        ' és a mandzsetta karra történő felhelyezésén kívül a teljes mérési folyamat automatizált.\n' +
-        '\n' +
-        'A mérés indításakor a mandzsetta felfúvódik és a véráramot átmenetileg elzárva, szorosan rögzül a karon,' +
-        ' majd egy szelep kinyitásával leenged.' +
-        ' Amikor a mandzsetta által kifejtett nyomás eléri a szisztolés vérnyomás értékét,' +
-        ' a vér ismét megindul az artériában. Ez rezgéseket kelt, amit a vérnyomásmérő érzékel,' +
-        ' és ez alapján rögzíti a szisztolés vérnyomás értékét.' +
-        '' + ' A hagyományos, analóg vérnyomásmérőkben a vér által keltett rezgést és hangokat az orvos érzékeli egy sztetoszkóp segítségével.\n' +
-        '\n' +
-        'A mandzsetta leeresztése közben az általa kifejtett nyomás eléri a diasztolés vérnyomás értékét,' +
-        ' ami a vibráció megszűnési szinttel egyenlő.' +
-        ' Az érzékelő ezt is észleli, és ismét rögzíti a vérnyomás értékét.')
+    const collapseElem1 = new CollapseElement('Ideális vérnyomás!', 'Ideális vérnyomás esetén, nem kell aggódnia,' +
+        'hiszen értékei az határon belül vannak. Ugyanakkor továbbra sem szabad figyelmen kívül hagyni a gyakori vérnyomásmérést' +
+        'és továbbra is étkezzen napi 3x, továbbá ügyeljen a testmozgásra és a pihenésre eggyaránt.')
     this.collapseElements.push(collapseElem1)
-    const collapseElem2 = new CollapseElement('A magas vérnyomás kockázatai.', 'A magas vérnyomás népbetegség.' +
-        ' A súlyos szív- és érrendszeri betegségek hátterében 80-90 százalékban' +
-        ' az emelkedett vérnyomásérték érhető tetten, ezért is szokták a magas vérnyomást' +
-        ' „néma gyilkos” elnevezéssel illetni.\n' +
+    const collapseElem2 = new CollapseElement('A magas vérnyomás kockázatai.', 'A magasvérnyomás-betegség' +
+        ' kialakulásában döntő szerepet játszik az egészségtelen életvitel.' +
+        ' Nem is gondolnánk, hogy helytelen szokásaink elhagyásával,' +
+        ' megváltoztatásával milyen nagymértékben járulhatunk hozzá az orvos által előírt gyógyszeres' +
+        ' kezelés eredményességéhez.' +
+        ' Próbáljon meg minél egészségesebb életmódot folytatni:' +
+        ' figyeljen oda a táplálkozásra, a rendszeres mozgásra, a dohányzás mellőzésére és a káros stresszhatások kerülésére!' +
+        ' A SCORE kockázatbecslő táblázat segítségével pedig könnyen következtethet arra,' +
+        ' hogy 10 éven belül kell-e súlyos szív-érrendszeri megbetegedéssel számolnia. \n' +
         '\n' +
-        'Mivel a magas vérnyomás kezdetben nem okoz panaszt,' +
-        ' az emberek többsége egyáltalán nem tud róla, hogy orvoshoz kellene fordulnia.' +
-        ' A kezeletlen magas vérnyomás azonban súlyos szövődményeket idézhet elő.' +
-        ' A magasvérnyomás-betegség korai felismerése és kezelése döntő jelentőségű mind a betegek életminősége,' +
-        ' mind pedig az életkilátásaik tekintetében.')
+        'A konyhasófogyasztás mérséklésével akár 2-8 Hgmm-es vérnyomáscsökkenést érhetünk el.' +
+        ' A rostdús, zöldségben-gyümölcsben, teljes kiőrlésű gabonatermékekben és halban gazdag,' +
+        ' valamint energia-, zsír- és magas glikémiás indexű szénhidrátokban szegény étrend' +
+        ' kialakításával megszabadulhatunk testsúlytöbbletünktől is.\n' +
+        '\n' +
+        'A rendszeres fizikai aktivitás további 4-10 Hgmm vérnyomáscsökkenést eredményezhet.' +
+        ' Magas vérnyomásban szenvedő betegeknek napi 35-40 percen át végzett közepes intenzitású,' +
+        ' dinamikus testmozgás – például gyors séta, kocogás, vagy kerékpározás – ajánlott.' +
+        ' Nem árt tudni, hogy a préseléssel járó, statikus erősportok – például súlyemelés,' +
+        ' body-building – emelik a vérnyomást.' +
+        ' A sportolás megkezdése előtt mindenképpen célszerű konzultálni a kezelőorvossal,' +
+        ' aki az egyén terhelhetőségének ismeretében személyre szabott tanácsokat fog adni. (4)\n' +
+        '\n' +
+        'Az magas vérnyomás nem olyan probléma, melynek tünetei nap mint nap figyelmeztetnek bennünket arra,' +
+        ' hogy foglalkoznunk kell vele. A magas vérnyomásból következő infarktus azonban túlságosan komoly betegség ahhoz,' +
+        ' hogy csak akkor kezdjünk a kérdéssel foglalkozni, amikor már megtörtént a baj.' +
+        ' Az egészséges táplálkozás, vagy egy aktívabb, sportolást sem nélkülöző életmód mindenképpen fontos lépések.' +
+        ' Férfiak esetében 45 éves, nők esetében pedig 55 éves kor felett szedhető olyan gyógyszer,' +
+        ' mellyel megelőzhetőek a szív- és érrendszeri betegségek.' +
+        ' Az Aspirin® Protect 100mg acetilszalicilsavat tartalmazó gyógyszer.' +
+        ' Napi 1 tabletta rendszeres szedése megakadályozza a vérlemezkék kóros összetapadását,' +
+        ' s ezáltal az ereket szűkítő vagy elzáró vérrögök képződését,' +
+        ' így csökkentve az infarktus előfordulásának kockázatát.\n' +
+        '\n' +
+        'A kockázatokról és mellékhatásokról olvassa el a betegtájékoztatót vagy kérdezze meg kezelőorvosát,' +
+        ' gyógyszerészét!')
     this.collapseElements.push(collapseElem2)
-    const collapseElem3 = new CollapseElement('Az alacsony vérnyomás kockázatai.', 'Szerencsésebbek azok, akiknek alacsony a vérnyomásuk,' +
-        ' mint a magas vérnyomás által érintettek, hiszen az előbbiek várható élettartama magasabb.' +
-        ' A rendkívül alacsony vérnyomás azonban olyan kellemetlen tüneteket is okozhat,' +
-        ' mint az émelygés, szédülés, ájulás. Az esetek nagy többségében ezek beavatkozást,' +
-        ' kezelést nem igényelnek.\n' +
+    const collapseElem3 = new CollapseElement('Hipertónia 1.', 'A hipertóniát ritkán kísérik tünetek,' +
+        ' és felismerése általában szűrés révén, illetve olyankor történik,' +
+        ' ha a beteg egy ettől független probléma miatt vesz igénybe egészségügyi ellátást.' +
+        ' A magas vérnyomásban szenvedők egy része fejfájásról (cephalalgia) (különösen a fej hátsó részében és reggel),' +
+        ' valamint állandó szédülésről (vertigo), fülzúgás/csengésről (tinnitus), látászavarról,' +
+        ' illetve ájulási epizódokról (collapsus) számol be.[15] További jelei lehetnek a fáradtságérzet,' +
+        ' a nehézlégzés (dyspnoe), az orrvérzés (epistaxis), a mellkasi fájdalom (angina pectoris) és az idegesség.' +
+        ' Igen gyakran előfordul, hogy a hipertónia szövődményeként károsodott szervek (pl. szív) ' +
+        'okoznak különböző tüneteket.\n' +
         '\n' +
-        'Azonban, ha ezen tünetek tartósan fennállnak, érdemes kivizsgáltatni,' +
-        ' hogy milyen kiváltó tényezők állnak a háttérben.')
+        'Fizikális vizsgálat során hipertónia gyanújára adhat okot,' +
+        ' ha a szem hátsó részén található szemfenék szemtükrözéses (oftalmoszkópiás) vizsgálata kezdetben ' +
+        'kereszteződési tünetet, előrehaladottabb stádiumban hipertóniás retinopathiát mutat ki.' +
+        ' A hipertóniás retinopathia mértékét súlyosságtól függően hagyományosan I–IV. fokozatokra osztják, ' +
+        'noha nem könnyű különbséget tenni az enyhébb típusok között. Az oftalmoszkópiás eredmények azt is jelezhetik,' +
+        ' hogy mennyi ideje áll fenn a hipertónia az illetőnél.')
     this.collapseElements.push(collapseElem3)
-    const collapseElem4 = new CollapseElement('Mi az a pulzus?', 'A pulzus az artériáknak (verőereknek) a szívveréssel (normálisan) egyezően fellépő periodikus lüktetése.' +
-        ' Mérésekor a szív percenkénti összehúzódásainak a számát (érverés számát) határozzuk meg.' +
-        ' Pulzus definíciója: a periférián tapintható szívverések száma.')
+    const collapseElem4 = new CollapseElement('Hipertónia 2.', 'Néhány további jel és tünet másodlagos' +
+        ' hipertóniára utalhat, azaz olyan magas vérnyomásra, amelynek kiváltó oka meghatározható,' +
+        ' például vesebetegség vagy endokrin betegség. A mellkasi vagy hasi elhízás, a glükóz intolerancia,' +
+        ' a holdvilágarc, a „bölénypúp” és a lila striák például Cushing-szindrómára utalnak.' +
+        ' A pajzsmirigy betegsége (túlműködése) és az akromegália is okozhat magas vérnyomást,' +
+        ' valamint jellegzetes panaszokat és tüneteket. A hasi zörej jelezhet vese-artéria sztenózis' +
+        't (az arteria renálisok, a veséket ellátó artériák szűkületét),' +
+        ' az alsó végtagok csökkent vérnyomása és/vagy a késleltetett vagy kihagyó combartéria pulzus ' +
+        '(arteria femoralis pulzus) pedig szívhez közeli aortaszűkületet (aorta koarktáció) jelezhet.' +
+        ' A fejfájással, fokozott szívdobogással, sápadtsággal vagy verejtékezéssel kísért ingadozó hipertónia' +
+        ' alapján mellékvese velő daganat (feochromocitóma) feltételezhető.')
     this.collapseElements.push(collapseElem4)
-    const collapseElem5 = new CollapseElement('Mit tehetsz a vérnyomásod csökkentése érdekében?', 'Sportoljon,' +
-        ' adjon le pár kilót. Sokan használnak olyan gyógyszert, amivel 140 körül tudják tartani a vérnyomásukat.' +
-        ' Néhányan még Maratont is futnak, egészségesen élnek,' +
-        ' de egyszerűen nem tudják a normális értékhez közel vinni a vérnyomásukat,' +
-        ' mivel valószínűleg genetikailag kódolt bennük a magas vérnyomás.')
+    const collapseElem5 = new CollapseElement('Hipertónia 3.', 'A súlyosan magas vérnyomást ' +
+        '(mely eléri vagy meghaladja a szisztolés 180 vagy diasztolés 110 értéket,' +
+        ' és néha rosszindulatú vagy gyorsított hipertóniának nevezik) „hipertóniás krízis”-nek is nevezik.' +
+        ' Az e szinteket meghaladó vérnyomásértékek a szövődmények magas kockázatát jelzik. Vannak,' +
+        ' akiknél az ebbe a tartományba eső vérnyomás mellett sem jelentkeznek tünetek,' +
+        ' ám körükben nagyobb valószínűséggel számolnak be fejfájásról (az esetek 22%-ában)' +
+        ' és szédülésről, mint az átlagnépesség körében.' +
+        'A hipertóniás krízis egyéb kísérő tünetei közé tartozhat a látás romlása és a szívelégtelenség miatti légszomj,' +
+        ' illetve a veseelégtelenség miatti általános rossz közérzet.' +
+        ' A legtöbb hipertóniás krízisben szenvedő embernél ismert a magas vérnyomás ténye,' +
+        ' de további kiváltó okok vezethettek a hirtelen emelkedéshez.\n' +
+        '\n' +
+        '„Hipertóniás vészhelyzet” – korábbi nevén „rosszindulatú magas vérnyomás”' +
+        ' – lép fel akkor, ha bizonyíték van egy vagy több szerv súlyosan megemelkedett vérnyomás miatt bekövetkező' +
+        ' közvetlen károsodására. Az ilyen károsodások közé tartozhat az agyi duzzanat' +
+        ' és diszfunkció okozta hypertenzív enkefalopátia, amelynek jellemzője a fejfájás,' +
+        ' émelygés, hányás és a megváltozott tudati szint (zavartság vagy álmosság, súlyos esetben kóma).' +
+        ' A retina papillödéma és/vagy a szemfenék bevérzései és váladékozása is a célszerv károsodását jelzik.' +
+        ' A mellkasi fájdalom jelezheti a szívizom károsodását (súlyosbodása esetén infarktust) vagy néha aorta dissectiót,' +
+        ' az aortafal rétegeinek bevérzés okozta szétválását (disszekáló aneurizma). ' +
+        'A légszomj, a köhögés és a véres köpet jellemző jelei a tüdőödémának. ' +
+        'Ez a betegség a tüdőszövet duzzanata balkamra-elégtelenség miatt, ' +
+        'mely esetben a szív balkamrája nem képes a vért megfelelően a tüdőből az érrendszerbe pumpálni.' +
+        ' A veseműködés gyors romlása (heveny vesekárosodás) és microangiopathiás hemolitikus anémia' +
+        ' (vérsejtek pusztulása) is előfordulhat. Ilyen helyzetben a további szervkárosodás megfékezése érdekében' +
+        ' feltétlenül szükséges a vérnyomást gyorsan csökkenteni.' +
+        ' Ezzel szemben nincs bizonyíték arra, hogy a vérnyomást gyorsan csökkenteni kellene olyan hipertóniás ' +
+        'vészhelyzetekben, ahol nincs bizonyíték a célszerv károsodására' +
+        ' és a vérnyomás túlságosan drasztikus csökkenése nem kockázatmentes.' +
+        ' Hipertóniás vészhelyzetekben javasolt a vérnyomást szájon át szedett gyógyszerekkel' +
+        ' 24–48 óra alatt fokozatosan csökkenteni.')
     this.collapseElements.push(collapseElem5)
-    const collapseElem6 = new CollapseElement('Mit tehetsz ha alacsony a vérnyomásod?', 'Ha valaki normalizálni szeretné a túlságosan alacsony vérnyomását,' +
-        ' érdemes egy kicsit tanulmányozni azokat a tanácsokat,' +
-        ' melyeket a magas vérnyomással küzdők kapnak.' +
-        ' Mindazok a dolgok ugyanis, melyek a magasabb vérnyomásúaknak "tiltottak",' +
-        ' az alacsonyabb vérnyomású embereknek kifejezetten előnyösek lehetnek.\n' +
-        '\n' +
-        'A sószegény étrend például nem javasolt azoknak, akiknek gyakrabban alacsony a vérnyomása.' +
-        ' Lehetőleg együtt többször kisebb adagokat, így megelőzhetjük,' +
-        ' hogy evés után hirtelen lecsökkenjen a vérnyomás.\n' +
-        '\n' +
-        'Sok ember számára a vérnyomás emelése egyenlő azzal, hogy gyorsan megiszik egy erős kávét.' +
-        ' Ez valóban jót tehet az alacsonyabb vérnyomásúaknak,' +
-        ' ráadásul, a kávéban számos olyan hatóanyag van,' +
-        ' amelyek hozzájárulhatnak az egészségünk megőrzéséhez és a betegségek megelőzéséhez.\n' +
-        '\n' +
-        'Nem árt azonban figyelembe venni, hogy a kávé nem mindenkinek előnyös,' +
-        ' például irritálhatja az érzékenyebb gyomrot.' +
-        ' Az alkoholt azonban érdemes kerülnie az alacsony vérnyomásúaknak! A folyadékbevitel,' +
-        ' vagyis az elegendő víz nagyon fontos, az enyhe mértékű kiszáradás az alacsony vérnyomás egyik oka.')
-    this.collapseElements.push(collapseElem6)
-    const collapseElem7 = new CollapseElement('Heves szívverés okai.', 'Ha magasabb vagy éppen alacsonyabb értékeket mérünk,' +
-        ' ne ijedjünk meg rögtön, hiszen előfordulhat,' +
-        ' hogy a mérés során nem értékeljük helyesen az adatokat.' +
-        ' A szakorvos akár egy egyszerű EKG-vizsgálattal is meg tudja állapítani,' +
-        ' hogy komoly problémáról vagy egy ideiglenesen fennálló állapotról van-e szó.' +
-        ' Ha indokolt, akkor egy kisebb méretű készüléket kötnek össze a mellkasra ragasztott tappancsokkal,' +
-        ' amely 24 órán át rögzíti az EKG-jeleket (Holter-monitorozás).' +
-        ' Előfordulhat, hogy ingervezetési, ingerképzési zavarról van szó, ennek kivizsgálására a szívgyógyász' +
-        ' elektrofiziológus szakorvoshoz irányítja a beteget. A hirtelen halál megelőzése lehet egy' +
-        ' ilyen vizsgálat, amely végül a ritmuszavart előidéző elváltozást megszüntető beavatkozáshoz vagy ' +
-        'pacemaker beültetéséhez is vezethet. Tanuljuk meg tehát mérni a pulzust,' +
-        ' és ne tétovázzunk, hogy kérdéseinkkel orvoshoz forduljunk. Rendszeres sporttal elérhető,' +
-        ' hogy a nyugalmi pulzusszámunk csökkenjen ')
-    this.collapseElements.push(collapseElem7)
-
   }
 
   ngOnInit(): void {

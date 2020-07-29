@@ -21,7 +21,7 @@ export class DiagramComponent implements OnInit {
 
     constructor(private userService: UserService) {
         this.form = new FormGroup({
-            //conditionId: new FormControl('', [Validators.required]),
+            // conditionId: new FormControl('', [Validators.required]),
             systolic: new FormControl(0, [Validators.required, Validators.min(1)]),
             diastolic: new FormControl(0, [Validators.required]),
             pulse: new FormControl(0, [Validators.required]),
