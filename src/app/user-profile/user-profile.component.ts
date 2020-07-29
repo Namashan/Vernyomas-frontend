@@ -42,13 +42,13 @@ export class UserProfileComponent implements OnInit {
     const u: User = {
       birthDate: this.form.get('birthDate').value,
       username: this.form.get('username').value,
-      lastname: this.form.get('lastname').value,
+      lastName: this.form.get('lastname').value,
       email: this.form.get('email').value,
       password: this.form.get('password').value,
       passwordConfirmation: this.form.get('passwordConfirmation').value,
       height: this.form.get('height').value,
       weight: this.form.get('weight').value,
-      firstname: this.form.get('firstname').value,
+      firstName: this.form.get('firstname').value,
       isMale: this.form.get('isMale').value,
     };
     this.userService.addUser(u).subscribe(response => {

@@ -10,6 +10,7 @@ import {ForumComponent} from '../../Forum/forum/forum.component';
 import {CalendarComponent} from '../../calendar/calendar.component';
 import {ProfilComponent} from '../../components/profil/profil.component';
 
+
 export const AdminLayoutRoutes: Routes = [
     // {
     //   path: '',
@@ -58,4 +59,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'forum', component: ForumComponent},
     { path: 'schedule', component: CalendarComponent},
     { path: 'profile', component: ProfilComponent}
+
 ];
