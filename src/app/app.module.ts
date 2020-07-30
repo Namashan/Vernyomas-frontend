@@ -26,6 +26,7 @@ import { LoginmodalComponent } from './loginmodal/loginmodal.component';
 import {DiagramComponent} from './diagram/diagram.component';
 import {ChartComponent} from './chart/chart.component';
 import {MatButtonModule} from '@angular/material/button';
+import { RegistrationdoneComponent } from './registrationdone/registrationdone.component';
 
 @NgModule({
   imports: [
@@ -53,7 +54,8 @@ import {MatButtonModule} from '@angular/material/button';
     CalendarComponent,
     LoginmodalComponent,
       DiagramComponent,
-      ChartComponent
+      ChartComponent,
+      RegistrationdoneComponent
 
   ],
   providers: [],

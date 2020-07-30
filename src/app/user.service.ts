@@ -12,6 +12,8 @@ import {Values} from '../interfaces/values';
 })
 export class UserService {
   constructor(private http: HttpClient) {
+
+    let reports: string[];
   }
 
   checkCapital(control: AbstractControl): ValidationErrors | null {
@@ -44,4 +46,8 @@ export class UserService {
         );
   }
 
+  // getReports(): Observable<reports>{
+  //   return this.http.get(environment.apiEndpoint + 'measure_details', reports,
+  //
+  // }
 }
