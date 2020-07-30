@@ -5,7 +5,8 @@ import {UserService} from '../user.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {first} from 'rxjs/operators';
 import {AuthenticationService} from '../../authentication.service';
-import {AlertService} from '../_services';
+import {AlertService} from "../../alert.service";
+
 
 @Component({
     selector: 'app-loginmodal',
