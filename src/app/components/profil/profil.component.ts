@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {LoginmodalComponent} from '../../loginmodal/loginmodal.component';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticationService} from "../../../authentication.service";
@@ -30,6 +32,7 @@ export class ProfilComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
     this.isAddMode = !this.id;
+  constructor(private modalService: NgbModal) { }
 
     // password not required in edit mode
     const passwordValidators = [Validators.minLength(6)];
@@ -106,4 +109,7 @@ export class ProfilComponent implements OnInit {
                   this.loading = false;
               });
   }
+    openModal() {
+        this.modalService.open(LoginmodalComponent);
+    }
 }
