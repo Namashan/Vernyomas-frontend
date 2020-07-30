@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginmodalComponent } from './loginmodal.component';
+
 describe('LoginmodalComponent', () => {
   let component: LoginmodalComponent;
   let fixture: ComponentFixture<LoginmodalComponent>;

@@ -1,99 +1,51 @@
 <div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header card-header-danger">
-                        <div class="profile-container">
-                            <img (click)="fileInput.click()" class="profile-pic"
-                                 src="https://img.icons8.com/dusk/64/000000/contract-job.png" alt="profile-picture"/>
-                        </div>
-                        <h4 class="card-title">Profil</h4>
 
-                    </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <mat-form-field class="example-full-width">
-                                            <input matInput placeholder="Vezetéknév" type="text">
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-6">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Keresztnév" type="text">
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-6">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Email Cím">
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-6">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Felhasználónév">
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-6">
-
-                                </div>
-                                <div class="col-md-6">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Jelszó" type="email">
-                                    </mat-form-field>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Jelszó Megerősítés" type="text">
-                                    </mat-form-field>
-                                </div>
-                            </div>
-                            <div class="row">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Test Magasság (cm)" type="text">
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-6">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Test Súly (kg)" type="text">
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-6">
-                                    <select class="custom-select" formControlName="isMale">
-                                        <option value="" disabled>Nem</option>
-                                        <option ngValue="{{true}}">Férfi</option>
-                                        <option ngValue="{{false}}">Nő</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button type="button" mat-raised-button (click)="fileInput.click()">Válassz egy kép
-                                        file-t!
-                                    </button>
-                                    <input hidden #fileInput type="file" id="file">
-                                    <!-- <div class="form-group">
-
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                            <textarea class="form-control" rows="5"></textarea>
-                                        </div>
-                                    </div> -->
-                                </div>
-                            </div>
-                            <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="openModal()" >Mentés</button>
-                            <div class="clearfix"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+    <div class="form-group col">
+        <label for="firstname">First Name</label>
+        <input type="text" formControlName="firstname" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"/>
+        <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+            <div *ngIf="f.firstname.errors.required">First Name is required</div>
         </div>
     </div>
+
+    <div class="form-group col">
+        <label for="lastname">Last Name</label>
+        <input type="text" formControlName="lastname" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"/>
+        <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+            <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+        </div>
+    </div>
+
+    <div class="form-group col">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+
+    <div class="form-group col">
+        <label for="password">
+            Password
+            <em *ngIf="!isAddMode">(Leave blank to keep the same password)</em>
+        </label>
+        <input type="password" formControlName="password" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Save
+        </button>
+        <a routerLink="/users" class="btn btn-link">Cancel</a>
+    </div>
+
 </div>
