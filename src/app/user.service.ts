@@ -17,6 +17,8 @@ export class UserService {
   private authenticationService: AuthenticationService;
 
   constructor(private http: HttpClient) {
+
+    let reports: string[];
   }
 
   checkCapital(control: AbstractControl): ValidationErrors | null {
@@ -75,4 +77,8 @@ export class UserService {
         }));
   }
 
+  // getReports(): Observable<reports>{
+  //   return this.http.get(environment.apiEndpoint + 'measure_details', reports,
+  //
+  // }
 }
