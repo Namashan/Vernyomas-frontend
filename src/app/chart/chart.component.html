@@ -10,7 +10,9 @@
     </ngb-panel>
         <ngb-panel title="Orvosmeterológiai jelentés a mai napra">
             <ng-template ngbPanelContent>
-
+                <div *ngFor="let obj of data">
+                <p>{{obj.text}}</p>
+            </div>
             </ng-template>
         </ngb-panel>
         <ngb-panel title="Kor alapján kalkulált ideális vérnyomás az Ön számára">

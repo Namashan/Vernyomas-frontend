@@ -12,7 +12,7 @@
             <option value="4">Napközben, nyugalmi állapotban</option>
         </select>
         <br>
-        <button type="submit" (click)="calculate()" mat-raised-button color="primary" class="calculate">Számolj!</button>
+        <button type="button" (click)="calculate(); submitForm();" mat-raised-button color="primary" class="calculate" routerLink="/chart">Számolj!</button>
     </form>
 </div>
 <div class="container" style="">
