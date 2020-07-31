@@ -13,8 +13,8 @@
                 <li class="nav-item" *ngIf="! (loginService.isLoggedIn$ | async)">
                 <button class="btn btn-danger" (click)="openModal()">Bejelentkezés</button>
             </li>
-                <li class="nav-item">
-                    <button class="btn btn-danger" routerLink="/dashboard">Kijelentkezés</button>
+                <li class="nav-item"  *ngIf="(loginService.isLoggedIn$ | async)">
+                    <button class="btn btn-danger" routerLink="/dashboard" (click)="logout()">Kijelentkezés</button>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/dashboard">

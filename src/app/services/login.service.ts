@@ -8,16 +8,18 @@ import {environment} from '../../environments/environment';
 })
 export class LoginService {
 
-  private isLoggedIn: BehaviorSubject<boolean>;
+  isLoggedIn: BehaviorSubject<boolean>;
   public isLoggedIn$;
 
 
   constructor(private http: HttpClient) {
     this.isLoggedIn = new BehaviorSubject<boolean>(false);
     this.isLoggedIn$ = this.isLoggedIn.asObservable();
-    this.http.post(environment.apiEndpoint + 'login_user', {}, { withCredentials: true })
+    this.http.get(environment.apiEndpoint + 'login_user', { withCredentials: true })
         .subscribe(() => {
           this.isLoggedIn.next(true);
+        }, () => {
+            this.isLoggedIn.next(false);
         });
   }
 

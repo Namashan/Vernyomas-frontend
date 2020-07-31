@@ -5,6 +5,7 @@ import {Values} from '../../interfaces/values';
 import {UserService} from '../user.service';
 import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment.prod';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-diagram',
@@ -19,7 +20,7 @@ export class DiagramComponent implements OnInit {
     pointerY: number;
     form: FormGroup;
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService, private router: Router) {
         this.form = new FormGroup({
             conditionId: new FormControl('', [Validators.required]),
             systolic: new FormControl("", [Validators.required, Validators.min(1), Validators.max(200)]),
@@ -40,6 +41,9 @@ export class DiagramComponent implements OnInit {
         document.getElementById("stage3").style.display="";
     }
 
+    navigate = function () {
+        this.router.navigateByUrl('/chart');
+    };
 
     submitForm() {
 
@@ -50,7 +54,7 @@ export class DiagramComponent implements OnInit {
             pulse: this.form.get('pulse').value,
         };
         this.userService.sendData(d).subscribe(response => {
-
+            this.navigate();
         });
     }
 

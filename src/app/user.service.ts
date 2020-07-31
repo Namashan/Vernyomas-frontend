@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
+import {BehaviorSubject, Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 import {AbstractControl, FormGroup, ValidationErrors} from '@angular/forms';
 import {User} from '../interfaces/user';
 import {environment} from '../environments/environment.prod';
 import {Values} from '../interfaces/values';
-import {map} from "rxjs/operators";
-import {AuthenticationService} from "../authentication.service";
+import {map} from 'rxjs/operators';
+import {AuthenticationService} from '../authentication.service';
+import {tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class UserService {
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
   private authenticationService: AuthenticationService;
+  saveData: any;
 
   constructor(private http: HttpClient) {
 
@@ -31,9 +33,9 @@ export class UserService {
   }
 
   checkPassword(group: FormGroup): ValidationErrors | null {
-    if (group.get('password').value === group.get('passwordConfirmation').value){
+    if (group.get('password').value === group.get('passwordConfirmation').value) {
       return null;
-    } else{
+    } else {
       return { 'passwords-not-match' : true };
     }
   }
@@ -41,14 +43,6 @@ export class UserService {
   addUser(user: User): Observable<any> {
     const u = {...user, isMale: user.isMale === 'true'};
       return this.http.post(environment.apiEndpoint + 'register', u, {withCredentials: true});
-  }
-
-  sendData(value: Values): Observable<any> {
-    return this.http.post(
-        environment.apiEndpoint + 'measure_details',
-        value,
-        {withCredentials: true}
-        );
   }
   public get userValue(): User {
     return this.userSubject.value;
@@ -75,6 +69,17 @@ export class UserService {
           }
           return x;
         }));
+  }
+
+  sendData(value: Values): Observable<any> {
+    return this.http.post(
+        environment.apiEndpoint + 'measure_details',
+        value,
+        {withCredentials: true}
+    ).pipe(tap( response => {
+      // TODO elmenteni
+      this.saveData = response;
+    } ));
   }
 
   // getReports(): Observable<reports>{

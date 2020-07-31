@@ -7,6 +7,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {LoginmodalComponent} from '../../loginmodal/loginmodal.component';
 import {UserService} from '../../user.service';
 import {LoginService} from '../../services/login.service';
+import {AuthenticationService} from '../../../authentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -21,7 +22,7 @@ export class NavbarComponent implements OnInit {
     private sidebarVisible: boolean;
 
     constructor(location: Location,  private element: ElementRef, private router: Router, private modalService: NgbModal,
-                private loginService: LoginService) {
+                private loginService: LoginService, private authenticationService: AuthenticationService) {
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -132,5 +133,9 @@ export class NavbarComponent implements OnInit {
           }
       }
       return 'Dashboard';
+    }
+
+    logout() {
+        this.authenticationService.logout();
     }
 }
