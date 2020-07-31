@@ -37,6 +37,7 @@ export class DiagramComponent implements OnInit {
         this.pointerX = Math.max(0, Math.min(1, dia / 120)) * 500;
         this.pointerY = Math.max(0, Math.min(1, sys / 200)) * 500;
         document.getElementById("pointer").style.display ="";
+        document.getElementById("stage3").style.display="";
     }
 
 

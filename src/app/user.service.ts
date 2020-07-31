@@ -1,17 +1,24 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {AbstractControl, FormGroup, ValidationErrors} from '@angular/forms';
 import {User} from '../interfaces/user';
 import {environment} from '../environments/environment.prod';
-import {UserLogin} from "../interfaces/user-login";
 import {Values} from '../interfaces/values';
+import {map} from "rxjs/operators";
+import {AuthenticationService} from "../authentication.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  private userSubject: BehaviorSubject<User>;
+  public user: Observable<User>;
+  private authenticationService: AuthenticationService;
+
   constructor(private http: HttpClient) {
+
+    let reports: string[];
   }
 
   checkCapital(control: AbstractControl): ValidationErrors | null {
@@ -43,5 +50,35 @@ export class UserService {
         {withCredentials: true}
         );
   }
+  public get userValue(): User {
+    return this.userSubject.value;
+  }
 
+  getAll() {
+    return this.http.get<User[]>(`${environment.apiEndpoint}users`);
+  }
+
+  getById(id: string) {
+    return this.http.get<User>(`${environment.apiEndpoint}users/${id}`);
+  }
+  update(id, params) {
+    return this.http.put(`${environment.apiEndpoint}users/${id}`, params)
+        .pipe(map(x => {
+          // update stored user if the logged in user updated their own record
+          if (id === this.userValue.id) {
+            // update local storage
+            const user = { ...this.userValue, ...params };
+            localStorage.setItem('user', JSON.stringify(user));
+
+            // publish updated user to subscribers
+            this.userSubject.next(user);
+          }
+          return x;
+        }));
+  }
+
+  // getReports(): Observable<reports>{
+  //   return this.http.get(environment.apiEndpoint + 'measure_details', reports,
+  //
+  // }
 }

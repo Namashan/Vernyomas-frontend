@@ -7,6 +7,7 @@ import {CalendarComponent} from '../../calendar/calendar.component';
 import {ProfilComponent} from '../../components/profil/profil.component';
 import {DiagramComponent} from '../../diagram/diagram.component';
 import {ChartComponent} from '../../chart/chart.component';
+import {RegistrationdoneComponent} from '../../registrationdone/registrationdone.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -58,6 +59,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'schedule', component: CalendarComponent},
     { path: 'profile', component: ProfilComponent},
     { path: 'diagram', component: DiagramComponent},
-    { path: 'chart', component: ChartComponent}
+    { path: 'chart', component: ChartComponent},
+    { path: 'registrationdone', component: RegistrationdoneComponent}
 
 ];

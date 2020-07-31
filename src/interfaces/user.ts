@@ -1,4 +1,5 @@
 export interface User {
+    id?: string;
     username: string;
     lastName: string;
     firstName: string;
@@ -9,5 +10,4 @@ export interface User {
     height: number;
     isMale: "true" | "false";
     birthDate: Date;
-
 }
